@@ -1,0 +1,20 @@
+{% extends 'ProjectModel/extras/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Home -->
+<section class="text-gray-600 body-font">
+	<div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+		<img class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="{{ home.image.url }}">
+		<div class="text-center lg:w-2/3 w-full">
+			<h1 class="title-font sm:text-4xl text-3xl font-medium text-gray-900">{{ home.title }}</h1>
+			<h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mt-2 mb-4">{{ home.subtitle | upper }}</h2>
+			<div class="mb-8 leading-relaxed">{{ home.description | safe }}</div>
+			<div class="flex justify-center">
+				<a href="#about-me" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Go Next</a>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock content %}
