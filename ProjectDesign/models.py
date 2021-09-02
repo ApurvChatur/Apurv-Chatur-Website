@@ -95,7 +95,6 @@ class About(models.Model):
 class Intrest(models.Model):
     title = models.CharField(max_length=255, unique=True, default='Python')
     subtitle = models.CharField(max_length=255, default='I love it!')
-    image = models.ImageField(upload_to='Intrest/', default='default.jpg')
     slug = models.SlugField(unique=True, blank=True)
 
     # Some Common Methods

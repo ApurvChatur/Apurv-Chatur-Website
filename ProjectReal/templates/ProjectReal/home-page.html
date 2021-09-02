@@ -1,137 +1,107 @@
-<!DOCTYPE html>
+{% extends 'ProjectReal/extras/base.html' %}
 {% load static %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Personal Portfolio Website Design Tutorial</title>
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="{% static 'ProjectReal/css/style.css' %}">
-
-</head>
-<body>
+{% block content %}
 
 <!-- header section starts  -->
-
 <header>
 
     <div id="menu-bars" class="fas fa-bars"></div>
 
     <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#services">services</a>
-        <a href="#portfolio">portfolio</a>
-        <a href="#blogs">blogs</a>
-        <a href="#contact">contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Interests</a>
+<!--        <a href="#portfolio">Portfolio</a>-->
+        <a href="#blogs">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 
 </header>
 
-<!-- header section ends -->
-
 <!-- home section starts  -->
-
 <section class="home" id="home">
 
     <div id="particles-js"></div>
 
     <div class="content">
-        <img class="tilt" src="{% static 'ProjectReal/images/home-pic.png' %}" alt="">
+        <img class="tilt" src="{{ home.image.url }}" alt="">
         <h3> Apurv <span>Chatur</span> </h3>
-        <p> i am a <span class="typing-text"> front end developer </span> </p>
-        <a href="#about" class="btn">about me</a>
+        <p> <span class="typing-text"></span> </p>
+        <a href="#about" class="btn">Explore</a>
     </div>
 
 </section>
 
-<!-- home section ends -->
-
 <!-- about section starts  -->
-
 <section class="about" id="about">
 
-    <h1 class="heading"> about <span>me</span> </h1>
+    <h1 class="heading"> <span>About</span> Me </h1>
 
     <div class="row">
 
         <div class="image">
-            <img class="tilt" src="{% static 'ProjectReal/images/about-pic.jpg' %}" alt="">
+            <img class="tilt" src="{{ about.image.url }}" alt="">
         </div>
 
         <div class="content">
-            <h3> my name is <span> Apurv Chatur </span> </h3>
-            <p class="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad debitis, dolorem omnis dolorum non provident distinctio inventore culpa in, nam eligendi quos modi vel aliquid blanditiis velit natus voluptatem deleniti.</p>
+            <h3> I'm <span> Apurv Chatur </span> </h3>
+            <div class="info">{{ home.description | safe }}</div>
             <div class="box-container">
                 <div class="box">
-                    <p> <span> age: </span> 23 </p>
-                    <p> <span> gender: </span> male </p>
-                    <p> <span> experience  : </span> 2 years </p>
-                    <p> <span> freelance : </span> available </p>
-                </div>
-                <div class="box">
-                    <p> <span> language : </span> hindi / english </p>
-                    <p> <span> phone : </span> +123-456-7890 </p>
-                    <p> <span> email : </span> shaikhanas@gmail.com </p>
-                    <p> <span> address : </span> mumbai, india - 400104 </p>
+                    <p> <span> Email: </span> chaturapurv@gmail.com </p>
+                    <p> <span> Contact No.: </span> +91 83298 84344 </p>
+                    <p> <span> Location  : </span> Pune 411057 </p>
+                    <p> <span> Language : </span> English, Hindi, Marathi </p>
                 </div>
             </div>
-            <a href="#" class="btn">download CV</a>
+            <a href="#" class="btn">Resume</a>
         </div>
 
     </div>
 
 </section>
-
-<!-- about section ends -->
 
 <!-- services section starts  -->
-
 <section class="services" id="services">
 
-    <h1 class="heading"> <span> my </span> services </h1>
+    <h1 class="heading"> My <span> Intrests </span> </h1>
 
     <div class="box-container">
 
         <div class="box tilt">
-            <i class="fas fa-code"></i>
-            <h3>web development</h3>
+            <i class="fab fa-python"></i>
+            <h3>Python Language</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div>
 
         <div class="box tilt">
-            <i class="fas fa-paint-brush"></i>
-            <h3>graphic design</h3>
+            <i class="fab fa-js-square"></i>
+            <h3>Javascript Language</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div>
 
         <div class="box tilt">
-            <i class="fas fa-bullhorn"></i>
-            <h3>seo marketing</h3>
+            <i class="fab fa-aws"></i>
+            <h3>AWS S3 Bucket</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div>
 
         <div class="box tilt">
-            <i class="fas fa-envelope"></i>
-            <h3>email marketing</h3>
+            <i class="fab fa-dyalog"></i>
+            <h3>Django Framework</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div>
 
         <div class="box tilt">
-            <i class="fas fa-mobile"></i>
-            <h3>Responsive designs</h3>
+            <i class="fab fa-react"></i>
+            <h3>React Library</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div>
 
         <div class="box tilt">
-            <i class="fab fa-wordpress"></i>
-            <h3>wordpress</h3>
+            <i class="fas fa-toilet-paper"></i>
+            <h3>Django REST Framework</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, quidem.</p>
         </div>
 
@@ -139,123 +109,119 @@
 
 </section>
 
-<!-- services section ends -->
+<!--&lt;!&ndash; portfolio section starts  &ndash;&gt;-->
+<!--<section class="portfolio" id="portfolio">-->
 
-<!-- portfolio section starts  -->
+<!--    <h1 class="heading"> <span> my </span> portfolio </h1>-->
 
-<section class="portfolio" id="portfolio">
+<!--    <div class="box-container">-->
 
-    <h1 class="heading"> <span> my </span> portfolio </h1>
+<!--        <div class="box tilt">-->
+<!--            <img src="images/img-1.jpg" alt="">-->
+<!--            <div class="content">-->
+<!--                <a href="#" class="btn">learn more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-    <div class="box-container">
+<!--        <div class="box tilt">-->
+<!--            <img src="images/img-2.jpg" alt="">-->
+<!--            <div class="content">-->
+<!--                <a href="#" class="btn">learn more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="box tilt">
-            <img src="images/img-1.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">learn more</a>
-            </div>
-        </div>
+<!--        <div class="box tilt">-->
+<!--            <img src="images/img-3.jpg" alt="">-->
+<!--            <div class="content">-->
+<!--                <a href="#" class="btn">learn more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="box tilt">
-            <img src="images/img-2.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">learn more</a>
-            </div>
-        </div>
+<!--        <div class="box tilt">-->
+<!--            <img src="images/img-4.jpg" alt="">-->
+<!--            <div class="content">-->
+<!--                <a href="#" class="btn">learn more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="box tilt">
-            <img src="images/img-3.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">learn more</a>
-            </div>
-        </div>
+<!--        <div class="box tilt">-->
+<!--            <img src="images/img-5.jpg" alt="">-->
+<!--            <div class="content">-->
+<!--                <a href="#" class="btn">learn more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="box tilt">
-            <img src="images/img-4.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">learn more</a>
-            </div>
-        </div>
+<!--        <div class="box tilt">-->
+<!--            <img src="images/img-6.jpg" alt="">-->
+<!--            <div class="content">-->
+<!--                <a href="#" class="btn">learn more</a>-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <div class="box tilt">
-            <img src="images/img-5.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">learn more</a>
-            </div>
-        </div>
+<!--    </div>-->
 
-        <div class="box tilt">
-            <img src="images/img-6.jpg" alt="">
-            <div class="content">
-                <a href="#" class="btn">learn more</a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- portfolio section ends -->
+<!--</section>-->
 
 <!-- blogs section starts  -->
-
 <section class="blogs" id="blogs">
 
-    <h1 class="heading"> <span> my </span> blogs </h1>
+    <h1 class="heading"> My <span> Projects </span> </h1>
 
     <div class="box-container">
 
+        {% for project in projects %}
         <div class="box tilt">
-            <img src="images/blog-img-1.jpg" alt="">
-            <h3> blogs title goes here </h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint tenetur adipisci explicabo nisi libero, in rerum earum. Dolor, quibusdam!</p>
-            <a href="#" class="btn">learn more</a>
+            <img src="{{ project.image.url }}" alt="">
+            <h3>{{ project.title }} </h3>
+            <p>{{ project.subtitle }} This is some cool subtitle. You like it! This is some cool subtitle. You like it!</p>
+            <a href="#" class="btn">Vist</a>
+            <a href="#" class="btn">More Details</a>
+        </div>
+        {% endfor %}
+
+        <div class="box tilt">
+            <img src="{{ project.image.url }}" alt="">
+            <h3> New Project </h3>
+            <p> This is some cool subtitle. You like it! This is some cool subtitle. You like it!</p>
+            <a href="#" class="btn">Vist</a>
+            <a href="#" class="btn">More Details</a>
         </div>
 
         <div class="box tilt">
-            <img src="images/blog-img-2.jpg" alt="">
-            <h3> blogs title goes here </h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint tenetur adipisci explicabo nisi libero, in rerum earum. Dolor, quibusdam!</p>
-            <a href="#" class="btn">learn more</a>
-        </div>
-
-        <div class="box tilt">
-            <img src="images/blog-img-3.jpg" alt="">
-            <h3> blogs title goes here </h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint tenetur adipisci explicabo nisi libero, in rerum earum. Dolor, quibusdam!</p>
-            <a href="#" class="btn">learn more</a>
+            <img src="{{ project.image.url }}" alt="">
+            <h3> New Project </h3>
+            <p> This is some cool subtitle. You like it! This is some cool subtitle. You like it!</p>
+            <a href="#" class="btn">Vist</a>
+            <a href="#" class="btn">More Details</a>
         </div>
 
     </div>
 
 </section>
 
-<!-- blogs section ends -->
-
 <!-- contact section starts  -->
-
 <section class="contact" id="contact">
 
-    <h1 class="heading"> contact <span> me </span> </h1>
+    <h1 class="heading"> <span> Contact </span> Me </h1>
 
     <div class="row">
 
         <div class="image">
-            <img class="tilt" src="images/contact-img.svg" alt="">
+            <img class="tilt" src="{% static 'ProjectReal/images/contact-img.svg' %}" alt="">
         </div>
 
         <form action="">
 
             <div class="inputBox">
-                <input type="text" placeholder="name">
-                <input type="email" placeholder="email">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
             </div>
 
-            <input type="text" placeholder="subject" class="box">
+            <input type="text" placeholder="Subject" class="box">
 
-            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <textarea placeholder="Message" name="" id="" cols="30" rows="10"></textarea>
 
-            <input type="submit" class="btn" value="send message">
+            <input type="submit" class="btn" value="Send">
 
         </form>
 
@@ -263,11 +229,8 @@
 
 </section>
 
-<!-- contact section ends -->
-
 <!-- footer section  -->
-
-<div class="footer"> created by <span> mr. web designer </span> | all rights reserved! </div>
+<!--<div class="footer"> created by <span> mr. web designer </span> | all rights reserved! </div>-->
 
 
 
@@ -310,7 +273,7 @@ window.onscroll = () =>{
 };
 
 var typed = new Typed('.typing-text', {
-    strings : ['front end developer', 'web designer', 'graphic designer', 'web developer'],
+    strings : ['Web Developer', 'Django Developer'],
     loop : true,
     typeSpeed : 150
 });
@@ -321,5 +284,4 @@ VanillaTilt.init(document.querySelectorAll('.tilt'),{
 
 </script>
 
-</body>
-</html>
+{% endblock content %}

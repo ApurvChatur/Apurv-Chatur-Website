@@ -12,7 +12,7 @@ def home_view(request):
     intrests = get_list_or_404(Intrest)
     projects = get_list_or_404(Project)
 
-    template_name = 'ProjectModel/a-home-page.html'
+    template_name = 'ProjectModel/home-page.html'
     context = {
         'title': 'Home',
         'home': home,
@@ -26,7 +26,7 @@ def home_view(request):
 def project_view(request, slug):
     project = get_object_or_404(Project, slug=slug)
 
-    template_name = 'ProjectModel/e-project-page.html'
+    template_name = 'ProjectModel/project-page.html'
     context = {
         'title': f'Project - {project.title}',
         'project': project,
