@@ -55,7 +55,7 @@
                     <p> <span> Language : </span> English, Hindi, Marathi </p>
                 </div>
             </div>
-            <a href="#" class="btn">Resume</a>
+            <a href="{% static 'ProjectReal/pdf/MyResume.pdf' %}" target="_blank" class="btn">Resume</a>
         </div>
 
     </div>
@@ -174,27 +174,11 @@
             <img src="{{ project.image.url }}" alt="">
             <h3>{{ project.title }} </h3>
             <p>{{ project.subtitle }} This is some cool subtitle. You like it! This is some cool subtitle. You like it!</p>
-            <a href="#" class="btn">Vist</a>
-            <a href="#" class="btn">More Details</a>
+            <a href="{{ project.visit_url }}" target="_blank" class="btn">Vist</a>
+            <a href="{{ project.get_real_project_url }}" class="btn">More Details</a>
         </div>
         {% endfor %}
-
-        <div class="box tilt">
-            <img src="{{ project.image.url }}" alt="">
-            <h3> New Project </h3>
-            <p> This is some cool subtitle. You like it! This is some cool subtitle. You like it!</p>
-            <a href="#" class="btn">Vist</a>
-            <a href="#" class="btn">More Details</a>
-        </div>
-
-        <div class="box tilt">
-            <img src="{{ project.image.url }}" alt="">
-            <h3> New Project </h3>
-            <p> This is some cool subtitle. You like it! This is some cool subtitle. You like it!</p>
-            <a href="#" class="btn">Vist</a>
-            <a href="#" class="btn">More Details</a>
-        </div>
-
+        
     </div>
 
 </section>
@@ -210,8 +194,8 @@
             <img class="tilt" src="{% static 'ProjectReal/images/contact-img.svg' %}" alt="">
         </div>
 
-        <form action="">
-
+        <form action="." method="POST">
+            {% csrf_token %}
             <div class="inputBox">
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">

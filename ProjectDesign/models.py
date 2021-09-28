@@ -145,6 +145,7 @@ class Project(models.Model):
                                  ),
                                 max_length=2, blank=True, null=True)
     visit_url = models.URLField(max_length=255, default='https://github.com/ApurvChatur/')
+    code_url = models.URLField(max_length=255, default='https://github.com/ApurvChatur/')
     slug = models.SlugField(unique=True, blank=True)
 
     # Some Common Methods
@@ -186,6 +187,13 @@ class Project(models.Model):
     # Project Model
     def get_project_url(self):
         return reverse('ProjectModel:project-page',
+                       kwargs={
+                           'slug': self.slug
+                       })
+
+    # Project Real
+    def get_real_project_url(self):
+        return reverse('ProjectReal:project-page',
                        kwargs={
                            'slug': self.slug
                        })
